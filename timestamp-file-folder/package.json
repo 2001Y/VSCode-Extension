@@ -3,12 +3,13 @@
   "displayName": "TimeStamp File/Folder",
   "description": "This is an extension to add time-stamped files and folders. It supports multiple configurable naming formats, which are applied according to priority. It automatically resolves conflicts with existing file/folder names and generates unique names using more detailed timestamp formats or sequential numbers where necessary.",
   "version": "1.0.0",
+  "repository": "https://github.com/2001Y/VSCode-Extension/tree/main/timestamp-file-folder",
+  "publisher": "2001Y",
   "icon": "icon.png",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/2001Y/VSCode-Extension/tree/main/timestamp-file-folder"
+  "pricing": "Free",
+  "sponsor": {
+    "url": "https://revolut.me/2001y"
   },
-  "license": "MIT",
   "engines": {
     "vscode": "^1.93.0"
   },
