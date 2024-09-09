@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# 依存関係
+/node_modules
+/vendor
+
+# ビルド出力
+/dist
+/build
+
+# ログ
+*.log
+
+# 環境変数
+.env
+.env.local
+.env.*.local
+
+# キャッシュ
+.cache/
+
+# テスト
+/coverage
+
+# その他
+*.tmp
+*.bak
+*.backup
