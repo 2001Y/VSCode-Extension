@@ -4,7 +4,7 @@ TimeStamp File/Folder is an extension for adding time-stamped files and folders.
 
 This extension supports multiple configurable naming formats and applies them according to priority. It automatically resolves conflicts with existing file/folder names and generates unique names using more detailed time stamp formats or sequential numbers when necessary.
 
-![Capture](capture.gif)
+![Capture](https://raw.githubusercontent.com/2001Y/VSCode-Extension/main/timestamp-file-folder/capture.gif)
 
 ## Key Features
 
