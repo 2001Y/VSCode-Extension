@@ -93,8 +93,12 @@ async function getUniquePath(parentPath: string, isFile: boolean): Promise<strin
 	const parentFormatLevel = identifyFormatLevel(parentFolderName);
 
 	// 親フォルダのフォーマットレベルが有効な場合、次のレベルから開始
-	if (parentFormatLevel > 0 && parentFormatLevel < maxFormatIndex) {
-		formatIndex = parentFormatLevel;
+	if (parentFormatLevel > 0) {
+		if( parentFormatLevel < maxFormatIndex) {
+			formatIndex = parentFormatLevel;
+		} else {
+			formatIndex = maxFormatIndex - 1;
+		}
 	}
 
 	let uniquePath: string = "";
@@ -163,12 +167,20 @@ const pathVariations = {
 };
 async function findDuplicatePath(fullPath: string): Promise<string | null> {
 	const variations = pathVariations.getAll(fullPath);
+	const parentDir = path.dirname(fullPath);
+	const parentName = path.basename(parentDir);
+
+	// 親フォルダ名との重複をチェック
+	if (variations.some(v => path.basename(v) === parentName)) {
+		return parentDir;
+	}
+
 	for (const variation of variations) {
 		try {
 			await fs.access(variation);
 			return variation;
 		} catch {
-			
+				// ファイルが存在しない場合は何もしない
 		}
 	}
 	return null;
