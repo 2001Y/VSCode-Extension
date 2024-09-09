@@ -1,0 +1,10 @@
+{
+  "newTimestampFile": "新規ファイル（タイムスタンプ付き）",
+  "newTimestampFolder": "新規フォルダ（タイムスタンプ付き）",
+  "extensionActive": "拡張機能 'timestamp-file-folder' が有効になりました。",
+  "namingFormatChanged": "命名フォーマットの設定が変更されました。新しい名前に反映されます。",
+  "errorOccurred": "エラーが発生しました: ",
+  "fileRenameError": "ファイル名の変更に失敗しました: ",
+  "namingFormatsDescription": "タイムスタンプの命名フォーマットを優先度順に記述します。優先順は上から下に適用されます。タイムスタンプはMoment.js形式（https://momentjs.com/docs/#/displaying/format/）で置き換えられます。",
+  "defaultFileExtensionDescription": "新規ファイル作成時のデフォルトの拡張子を指定します。"
+}

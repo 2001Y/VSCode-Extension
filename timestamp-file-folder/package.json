@@ -1,0 +1,94 @@
+{
+  "name": "timestamp-file-folder",
+  "displayName": "TimeStamp File/Folder",
+  "description": "This is an extension to add time-stamped files and folders. It supports multiple configurable naming formats, which are applied according to priority. It automatically resolves conflicts with existing file/folder names and generates unique names using more detailed timestamp formats or sequential numbers where necessary.",
+  "version": "1.0.0",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/timestamp-file-folder.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:timestamp-file-folder.newTimestampFile",
+    "onCommand:timestamp-file-folder.newTimestampFolder"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "timestamp-file-folder.newTimestampFile",
+        "title": "%newTimestampFile%"
+      },
+      {
+        "command": "timestamp-file-folder.newTimestampFolder",
+        "title": "%newTimestampFolder%"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "timestamp-file-folder.newTimestampFile",
+          "group": "navigation@10"
+        },
+        {
+          "command": "timestamp-file-folder.newTimestampFolder",
+          "group": "navigation@11"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "TimeStamp File/Folder",
+      "properties": {
+        "timestamp-file-folder.namingFormats": {
+          "type": "array",
+          "default": [
+            "YYYY-MM-DD",
+            "YYYY-MM-DD_HH:mm",
+            "YYYY-MM-DD_HH:mm:ss"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "%namingFormatsDescription%"
+        },
+        "timestamp-file-folder.defaultFileExtension": {
+          "type": "string",
+          "default": ".txt",
+          "description": "%defaultFileExtensionDescription%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.93.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "moment": "^2.30.1",
+    "vscode-nls": "^5.2.0"
+  }
+}

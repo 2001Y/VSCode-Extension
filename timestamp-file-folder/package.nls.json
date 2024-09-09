@@ -1,0 +1,10 @@
+{
+  "newTimestampFile": "New File (with Timestamp)",
+  "newTimestampFolder": "New Folder (with Timestamp)",
+  "extensionActive": "Extension 'timestamp-file-folder' is now active.",
+  "namingFormatChanged": "Naming format setting has been changed. It will be reflected in new names.",
+  "errorOccurred": "An error occurred: ",
+  "fileRenameError": "Failed to rename file: ",
+  "namingFormatsDescription": "Specify timestamp naming formats in order of priority. The priority is applied from top to bottom. Timestamps will be automatically replaced using Moment.js formats (https://momentjs.com/docs/#/displaying/format/).",
+  "defaultFileExtensionDescription": "Specify the default file extension for new files."
+}
